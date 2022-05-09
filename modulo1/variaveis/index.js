@@ -64,3 +64,17 @@ a = c;
 
 console.log("O novo valor de a é", a);
 console.log("O novo valor de a é", b);
+
+// DESAFIO
+
+let numero1 = prompt("Digite um número: ");
+let numero2 = prompt("Digite outro número: ");
+
+let convercao1 = parseInt(numero1, 10);
+let convercao2 = parseInt(numero2, 10);
+
+let soma = convercao1 + convercao2;
+let multiplicacao = convercao1 * convercao2;
+
+console.log(soma);
+console.log(multiplicacao);
