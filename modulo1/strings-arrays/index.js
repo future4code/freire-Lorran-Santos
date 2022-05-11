@@ -52,28 +52,37 @@
 
 // 3 - Faça um programa, seguindo os passos:
 // a - Crie um array vazio e guarde-o em uma variável, chamada listaDeTarefas
-let listaDeTarefas = [];
-console.log(listaDeTarefas);
+// let listaDeTarefas = [];
+// console.log(listaDeTarefas);
 
 // b - Pergunte ao usuário 3 tarefas que ele precise realizar no dia e armazene-as, uma por uma, no array
-const tarefasUsuario = prompt("Digite uma tarefa do seu dia");
-const tarefasUsuario2 = prompt("Digite outra tarefa do seu dia");
-const tarefasUsuario3 = prompt("Digite mais uma tarefa do seu dia");
-listaDeTarefas[0] = tarefasUsuario;
-listaDeTarefas[1] = tarefasUsuario2;
-listaDeTarefas[2] = tarefasUsuario3;
+// const tarefasUsuario = prompt("Digite uma tarefa do seu dia");
+// const tarefasUsuario2 = prompt("Digite outra tarefa do seu dia");
+// const tarefasUsuario3 = prompt("Digite mais uma tarefa do seu dia");
+// listaDeTarefas[0] = tarefasUsuario;
+// listaDeTarefas[1] = tarefasUsuario2;
+// listaDeTarefas[2] = tarefasUsuario3;
 
 // c - Imprima o array no console
-console.log(listaDeTarefas);
+// console.log(listaDeTarefas);
 
 // d - Peça ao usuário que digite o índice de uma tarefa que ele já realizou: 0, 1 ou 2
-const indiceDaTarefa = prompt(
-  "Digite de escolha uma das tarefas que digitou 0, 1 ou 2: "
-);
+// const indiceDaTarefa = prompt(
+//   "Digite de escolha uma das tarefas que digitou 0, 1 ou 2: "
+// );
 
 // e - Remova da lista o item de índice que o usuário escolheu.
-// const removerLista = listaDeTarefas[indiceDaTarefa - 1];
-listaDeTarefas.splice(indiceDaTarefa, 1);
+// listaDeTarefas.splice(indiceDaTarefa, 1);
 
 // f - Imprima o array no console
-console.log(listaDeTarefas);
+// console.log(listaDeTarefas);
+
+// DESAFIO
+// 1 - Receba uma frase e retorne um array onde cada elemento é uma das palavras da frase, ignorando os espaços:
+// let fraseUsuario = prompt("Escreva uma frase: ");
+// let array = fraseUsuario.split(" ");
+// console.log(array);
+
+// 2 - Dado o array ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"], faça um programa que acha o índice da palavra Abacaxi e imprime tanto o índice quanto o tamanho do array:
+const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
+console.log(frutas.indexOf("Abacaxi"), frutas.length);
