@@ -45,46 +45,69 @@
 // informacoesMinhas();
 
 // b - Agora escreva uma função que receba 4 parâmetros que correspondem às informações de uma pessoa: o nome (string), a idade (number), a cidade (string) e uma profissão (string). Ela deve retornar uma string que unifique todas as informações da pessoa em uma só mensagem com o template:
-function informacoesDoUsuario(nome, idade, cidade, profissao) {
-  const frase = `Eu sou ${nome}, tenho ${idade} anos, moro em ${cidade} e sou ${profissao}.`;
-  return frase;
-}
+// function informacoesDoUsuario(nome, idade, cidade, profissao) {
+//   const frase = `Eu sou ${nome}, tenho ${idade} anos, moro em ${cidade} e sou ${profissao}.`;
+//   return frase;
+// }
 
-const fraseCompleta = informacoesDoUsuario(
-  "Lorran",
-  22,
-  "Cachoeirinha",
-  "estudande"
-);
-console.log(fraseCompleta);
+// const fraseCompleta = informacoesDoUsuario(
+//   "Lorran",
+//   22,
+//   "Cachoeirinha",
+//   "estudande"
+// );
+// console.log(fraseCompleta);
 
 // 2 - Escreva as funções explicadas abaixo:
 // a - Escreva uma função que receba 2 números como parâmetros, e, dentro da função, faça a soma das duas entradas e retorne o resultado. Invoque a função e imprima no console o resultado.
-const somar = (n1, n2) => {
-  const soma = n1 + n2;
-  return soma;
-};
-const conta = somar(2, 5);
-console.log(conta);
+// const somar = (n1, n2) => {
+//   const soma = n1 + n2;
+//   return soma;
+// };
+// const conta = somar(2, 5);
+// console.log(conta);
 
 // b - Faça uma função que recebe 2 números e retorne um booleano que informa se o primeiro número é maior ou igual ao segundo.
-function validarMaior(num1, num2) {
-  const maiorIgual = num1 >= num2;
-  return `O primeiro número é maior ou igual? ${maiorIgual}.`;
-}
-console.log(validarMaior(6, 2));
+// function validarMaior(num1, num2) {
+//   const maiorIgual = num1 >= num2;
+//   return `O primeiro número é maior ou igual? ${maiorIgual}.`;
+// }
+// console.log(validarMaior(6, 2));
 
 // c - Escreva uma função que receba um número e devolva um booleano indicando se ele é par ou não.
-const validarPar = (n1) => {
-  const validacaoPar = n1 % 2;
-  return validacaoPar === 0;
-};
-console.log(validarPar(4));
+// const validarPar = (n1) => {
+//   const validacaoPar = n1 % 2;
+//   return validacaoPar === 0;
+// };
+// console.log(validarPar(4));
 
 // d - Faça uma função que recebe uma mensagem (string) como parâmetro e imprima o tamanho dessa mensagem, juntamente com uma versão dela em letras maiúsculas.
-function receberMensagem(texto) {
-  const textoTamanho = texto.length;
-  const textoMaiusculo = texto.toUpperCase();
-  console.log(`${textoTamanho} ${textoMaiusculo}`);
-}
-receberMensagem("Olá Mundo!");
+// function receberMensagem(texto) {
+//   const textoTamanho = texto.length;
+//   const textoMaiusculo = texto.toUpperCase();
+//   console.log(`${textoTamanho} ${textoMaiusculo}`);
+// }
+// receberMensagem("Olá Mundo!");
+
+// DESAFIO
+
+// 1 - Funções são trechos de códigos como quaisquer outros mas que podemos acessá-los mais de uma vez ao longo do código através de invocações/chamadas. Então, funções podem chamar/invocar outras funções também. Sua tarefa é escrever duas funções
+// a - Escreva uma arrow function que recebe um parâmetro e imprime no console esse parâmetro
+const imprimir = (texto) => {
+  console.log(texto);
+};
+imprimir("Olá Mundo");
+
+// b - Escreva outra arrow function que recebe dois valores como parâmetros mas nenhum retorno. Faça a soma entre esses valores e chame a sua primeira função mandando este resultado da soma como entrada para imprimi-lo.
+const somar = (n1, n2) => n1 + n2;
+imprimir(somar(5, 2));
+
+// 2 - Faça uma função que execute o teorema de Pitágoras, recebendo dois catetos e calculando o valor da hipotenusa. Retorne este valor, invoque a função e imprima o resultado no console.
+const pitagorasHipotenusa = (ca, co) => {
+  let catetoAdjacente = ca ** 2;
+  let catetoOposto = co ** 2;
+  let resultado = catetoAdjacente + catetoOposto;
+  const hipotenusa = Math.sqrt(resultado);
+  return hipotenusa;
+};
+console.log(pitagorasHipotenusa(4, 3));
