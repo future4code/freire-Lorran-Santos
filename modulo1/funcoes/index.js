@@ -89,25 +89,55 @@
 // }
 // receberMensagem("Olá Mundo!");
 
+// 3 - Crie uma função para cada uma das operações básicas (soma, subtração, multiplicação e divisão). Em seguida, peça para o usuário inserir dois números e chame essas 4 funções com esses valores inputados pelo usuário sendo o argumento. Por fim, mostre no console o resultado das operações:
+const somar = (n1, n2) => {
+  let soma = n1 + n2;
+  return soma;
+};
+
+const subtrair = (n1, n2) => {
+  let subtrai = n1 - n2;
+  return subtrai;
+};
+
+const multiplicar = (n1, n2) => {
+  let multiplica = n1 * n2;
+  return multiplica;
+};
+
+const dividir = (n1, n2) => {
+  let dividi = n1 / n2;
+  return dividi;
+};
+
+const numero1 = Number(prompt("Digite um número: "));
+const numero2 = Number(prompt("Digite outro número: "));
+
+console.log(`As quatro operações são:
+soma: ${somar(numero1, numero2)}
+subtração: ${subtrair(numero1, numero2)}
+multiplicação: ${multiplicar(numero1, numero2)}
+divisão: ${dividir(numero1, numero2)}`);
+
 // DESAFIO
 
 // 1 - Funções são trechos de códigos como quaisquer outros mas que podemos acessá-los mais de uma vez ao longo do código através de invocações/chamadas. Então, funções podem chamar/invocar outras funções também. Sua tarefa é escrever duas funções
 // a - Escreva uma arrow function que recebe um parâmetro e imprime no console esse parâmetro
-const imprimir = (texto) => {
-  console.log(texto);
-};
-imprimir("Olá Mundo");
+// const imprimir = (texto) => {
+//   console.log(texto);
+// };
+// imprimir("Olá Mundo");
 
 // b - Escreva outra arrow function que recebe dois valores como parâmetros mas nenhum retorno. Faça a soma entre esses valores e chame a sua primeira função mandando este resultado da soma como entrada para imprimi-lo.
-const somar = (n1, n2) => n1 + n2;
-imprimir(somar(5, 2));
+// const somar = (n1, n2) => n1 + n2;
+// imprimir(somar(5, 2));
 
 // 2 - Faça uma função que execute o teorema de Pitágoras, recebendo dois catetos e calculando o valor da hipotenusa. Retorne este valor, invoque a função e imprima o resultado no console.
-const pitagorasHipotenusa = (ca, co) => {
-  let catetoAdjacente = ca ** 2;
-  let catetoOposto = co ** 2;
-  let resultado = catetoAdjacente + catetoOposto;
-  const hipotenusa = Math.sqrt(resultado);
-  return hipotenusa;
-};
-console.log(pitagorasHipotenusa(4, 3));
+// const pitagorasHipotenusa = (ca, co) => {
+//   let catetoAdjacente = ca ** 2;
+//   let catetoOposto = co ** 2;
+//   let resultado = catetoAdjacente + catetoOposto;
+//   const hipotenusa = Math.sqrt(resultado);
+//   return hipotenusa;
+// };
+// console.log(pitagorasHipotenusa(4, 3));
