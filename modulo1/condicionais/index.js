@@ -129,18 +129,115 @@
 
 // 4 - Considere a situação: você vai ao cinema com um amigo ou amiga, porém ele/ela só assistirá a um filme com você se ele for do gênero fantasia e se o ingresso está abaixo de 15 reais. Faça um código que pergunta ao usuário qual o gênero de filme que vão assistir e outra pergunta sobre o preço do ingresso, então verifique se seu amigo ou amiga vai topar assistir o filme. Caso positivo, imprima no console a mensagem: "Bom filme!", caso contrário, imprima "Escolha outro filme :("
 
-const filme = {};
-const generoFilme = prompt("Digite o gênero do filme: ").toLowerCase();
-const precoFilme = +prompt("Digite o preco do ingresso: ");
-filme.genero = generoFilme;
-filme.preco = precoFilme;
+// const filme = {};
+// const generoFilme = prompt("Digite o gênero do filme: ").toLowerCase();
+// const precoFilme = +prompt("Digite o preco do ingresso: ");
+// filme.genero = generoFilme;
+// filme.preco = precoFilme;
 
-const verificarFilme = () => {
-  if (filme.genero === "fantasia" && filme.preco < 15) {
-    console.log("Bom Filme!!");
-  } else {
-    console.log("Escolha outro filme");
+// const verificarFilme = () => {
+//   if (filme.genero === "fantasia" && filme.preco < 15) {
+//     console.log("Bom Filme!!");
+//   } else {
+//     console.log("Escolha outro filme");
+//   }
+// };
+
+// verificarFilme();
+
+// DESAFIOS
+
+// 1 - Modifique o código do exercício 4 de escrita de código para, antes de imprimir a mensagem "Bom filme!", pergunte ao usuário, pelo prompt qual lanchinho ele vai comprar (pipoca, chocolate, doces, etc) e imprima no console as mensagens "Bom filme!" e "Aproveite o seu [LANCHINHO]", trocando [LANCHINHO] pelo que o usuário colocou no input.
+
+// const filme = {};
+// const generoFilme = prompt("Digite o gênero do filme: ").toLowerCase();
+// const precoFilme = +prompt("Digite o preco do ingresso: ");
+// filme.genero = generoFilme;
+// filme.preco = precoFilme;
+
+// const verificarFilme = () => {
+//   if (filme.genero === "fantasia" && filme.preco < 15) {
+//     const lanche = prompt("Qual lanche vai comprar para acompanhar o filme?");
+//     console.log(`Bom Filme!! Aproveite o seu ${lanche}`);
+//   } else {
+//     console.log("Escolha outro filme");
+//   }
+// };
+
+// verificarFilme();
+
+// 2 - 2. Você foi contratado para criar um sistema de vendas de ingressos de jogos de um estádio de futebol. Para esta compra, o usuário deve fornecer algumas informações:
+// - Nome completo;
+// - Tipo de jogo: IN indica internacional; e DO indica doméstico;
+// - Etapa do jogo: SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final
+// - Categoria: pode ser as opções 1, 2, 3 ou 4;
+// - Quantidade de ingressos
+
+// O seu sistema deve solicitar estas informações ao usuário, através do `prompt` . Além disso, ele deve imprimir tudo isso, junto com o valor de cada ingresso e o valor total que o usuário tem que pagar (ou seja, o valor unitário do ingresso multiplicado pela quantidade). Abaixo, há a tabela com os valores de cada ingresso e exemplos de execução do programa. Lembrando que o valor de jogos internacionais é o mesmo de jogos domésticos, mas seus preços devem ser multiplicados pelo valor do dólar (considerar o dólar = R$4,10)
+
+const nomeCompleto = prompt("Digite o seu nome completo: ");
+const tipoDoJogo = prompt(
+  "Qual o tipo de jogo IN (Internacional) ou DO (Doméstico):"
+);
+const etapaDoJogo = prompt(
+  "Qual etapa do jogo SF (Semifinal), DT (Decisão de terceiro lugar) ou FI (Final):"
+);
+let categoria = prompt("Qual a categoria (1, 2, 3 ou 4):");
+let quantidadeIngressos = +prompt("Quantos ingressos são? ");
+
+let valor;
+let moeda;
+let valorTotal;
+
+if (etapaDoJogo === "SF") {
+  if (categoria === "1") {
+    valor = 1320;
+  } else if (categoria === "2") {
+    valor = 880;
+  } else if (categoria === "3") {
+    valor = 550;
+  } else if (categoria === "4") {
+    valor = 220;
   }
-};
+}
+if (etapaDoJogo === "DT") {
+  if (categoria === "1") {
+    valor = 660;
+  } else if (categoria === "2") {
+    valor = 440;
+  } else if (categoria === "3") {
+    valor = 330;
+  } else if (categoria === "4") {
+    valor = 170;
+  }
+}
+if (etapaDoJogo === "FI") {
+  if (categoria === "1") {
+    valor = 1980;
+  } else if (categoria === "2") {
+    valor = 1320;
+  } else if (categoria === "3") {
+    valor = 880;
+  } else if (categoria === "4") {
+    valor = 330;
+  }
+}
+if (tipoDoJogo === "IN") {
+  moeda = "U$";
+  valor = valor * 4.1;
+  valorTotal = valor * quantidadeIngressos;
+} else {
+  moeda = "R$";
+  valorTotal = valor * quantidadeIngressos;
+}
 
-verificarFilme();
+console.log(`
+---Dados da Compra
+Nome do Cliente: ${nomeCompleto}
+Tipo do jogo: ${tipoDoJogo}
+Etapa do jogo: ${etapaDoJogo}
+Categoria: ${categoria}
+Quantidade de Ingressos: ${quantidadeIngressos}
+---Valores---
+Valor do Ingresso: ${valor}
+Valor total: ${valorTotal}`);
