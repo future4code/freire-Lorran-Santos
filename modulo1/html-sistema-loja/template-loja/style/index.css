@@ -1,0 +1,103 @@
+/* estilos gerais */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #0077b6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Cabeçalho */
+
+header {
+  padding: 32px 0px 20px 0px;
+  text-align: center;
+  background-color: #0077b6;
+}
+
+header h1 {
+  color: #03045e;
+}
+
+header p {
+  color: #03045e;
+  padding: 4px;
+}
+
+.header-menu {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  background-color: #0077b6;
+  padding: 32px 0px;
+}
+
+.header-menu a {
+  display: inline-block;
+  padding: 12px 8px;
+  margin: 8px auto;
+  background-color: #023e8a;
+  color: #caf0f8;
+  border-radius: 4px;
+}
+
+.header-menu a:hover {
+  background-color: #03045e;
+}
+
+/* Conteúdo principal */
+
+main {
+  background-color: #0077b6;
+  color: #caf0f8;
+  padding: 32px;
+}
+
+main h2 {
+  font-size: 32px;
+}
+
+main p {
+  font-size: 20px;
+}
+
+.main-texto-loja {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.main-titulo {
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
+/* Rodapé */
+
+footer {
+  text-align: center;
+  padding: 24px;
+  background-color: #0077b6;
+}
+
+.footer-texto {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+}
+
+.footer-redes-sociais img {
+  width: 32px;
+  padding: 16px 8px;
+}

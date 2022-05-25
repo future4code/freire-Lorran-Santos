@@ -1,0 +1,98 @@
+/* estilos gerais */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #0077b6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Cabeçalho */
+
+header {
+  padding-top: 32px;
+  padding-bottom: 16px;
+  text-align: center;
+  background-color: #0077b6;
+}
+
+header h1 {
+  color: #03045e;
+}
+
+.header-menu {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  background-color: #0077b6;
+  padding-bottom: 24px;
+}
+
+.header-menu a {
+  display: inline-block;
+  padding: 12px 8px;
+  margin: 8px auto;
+  background-color: #023e8a;
+  color: #caf0f8;
+  border-radius: 4px;
+}
+
+.header-menu a:hover {
+  background-color: #03045e;
+}
+
+/* Conteúdo principal */
+
+main {
+  background-color: #0077b6;
+  color: #caf0f8;
+}
+
+.main-titulo {
+  text-align: center;
+  padding: 24px;
+  font-size: 32px;
+  color: #03045e;
+}
+
+.main-lista-funcionarios {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.main-lista-funcionarios li {
+  padding: 8px;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Rodapé */
+
+footer {
+  text-align: center;
+  padding: 32px;
+  background-color: #0077b6;
+}
+
+.footer-texto {
+  display: block;
+  text-align: center;
+}
+
+.footer-redes-sociais img {
+  width: 32px;
+  padding: 16px 8px;
+}
