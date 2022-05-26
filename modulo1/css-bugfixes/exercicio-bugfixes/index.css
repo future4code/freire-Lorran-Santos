@@ -99,10 +99,6 @@ div:last-child {
   text-align: center;
 }
 
-.icone {
-  width: 25px;
-}
-
 table {
   width: 60%;
 }
@@ -123,9 +119,21 @@ td button {
   color: black;
 }
 
+td button:hover {
+  background-color: #ffd001;
+}
+
+td button:active {
+  color: white;
+}
+
 .container-do-search {
   margin-top: 20px;
   height: 100px;
+}
+
+.icone {
+  width: 25px;
 }
 
 #back-button {
