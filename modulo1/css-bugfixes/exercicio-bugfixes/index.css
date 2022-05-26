@@ -99,6 +99,11 @@ div:last-child {
   text-align: center;
 }
 
+.container-do-search input{
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
 table {
   width: 60%;
 }
