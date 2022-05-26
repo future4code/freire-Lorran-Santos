@@ -99,6 +99,10 @@ div:last-child {
   text-align: center;
 }
 
+.icone {
+  width: 25px;
+}
+
 table {
   width: 60%;
 }
