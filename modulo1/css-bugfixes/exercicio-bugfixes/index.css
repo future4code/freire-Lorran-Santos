@@ -68,7 +68,13 @@ div img {
 #container-de-descricao {
   background-color: #2274a5;
   color: white;
-  padding-top: 50px;
+  padding: 1px;
+}
+
+#container-de-descricao > p {
+  display: block;
+  max-width: 25ch;
+  margin: 80px auto 0px;
 }
 
 #container-de-descricao > ol {
