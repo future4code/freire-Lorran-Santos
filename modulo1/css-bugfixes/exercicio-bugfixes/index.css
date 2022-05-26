@@ -78,6 +78,14 @@ div > p:first-child {
   padding: 15px 0px;
 }
 
+#lista-ordenada {
+  display: inline-block;
+}
+
+#lista-ordenada li p {
+    padding: 0px 5px;
+}
+
 #container-para-comprar {
   background-color: #e7eb90;
 }
@@ -141,6 +149,14 @@ td button:active {
 
 .icone {
   width: 25px;
+}
+
+.icone:hover {
+  opacity: 50%;
+}
+
+.icone:active {
+  opacity: 100%;
 }
 
 #back-button {
