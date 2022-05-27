@@ -1,0 +1,87 @@
+/* Estilos Gerais */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Poppins;
+  line-height: 1.4;
+}
+
+body {
+  background-color: #001233;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Cabeçalho */
+
+#header {
+  padding: 40px 0px;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto;
+  background-color: #001233;
+}
+
+#header-titulo {
+  text-align: center;
+  color: #0466c8;
+  margin-bottom: 16px;
+}
+
+.header-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header-menu a {
+  padding: 4px 16px;
+  background-color: #023e7d;
+  color: #ffffff;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.header-menu a:hover {
+  background-color: #0466c8;
+}
+
+#header-frase {
+  text-align: center;
+  color: #979dac;
+}
+
+/* Conteudo Principal */
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin: 0px auto;
+}
+
+.apresentacao {
+  text-align: center;
+  height: 600px;
+  background-color: #023e7d;
+  border-radius: 4px;
+  padding: 16px 32px;
+  width: 25ch;
+}
+
+#apresentacao-texto {
+  margin-top: 25px;
+}
