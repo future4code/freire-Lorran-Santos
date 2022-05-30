@@ -76,10 +76,35 @@ ul {
   color: #979dac;
 }
 
+#foto-pessoal img{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
 .stacks {
   padding-top: 60px;
 }
 
 .stacks img{
   width: 60px;
+}
+
+footer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0px;
+  margin-top: 60px;
+  color: #ffffff;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer img{
+  width: 30px;
 }
