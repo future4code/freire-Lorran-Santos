@@ -1,0 +1,47 @@
+
+.contato-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.contato-formulario {
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.contato-formulario form {
+  text-align: center;
+}
+
+.contato-formulario label {
+  padding: 16px;
+  display: block;
+  color: #0466c8;
+}
+
+.contato-formulario input {
+  border: none;
+  border-radius: 4px;
+  padding: 4px 16px;
+}
+
+.contato-container textarea {
+  border-radius: 4px;
+}
+
+#botao-formulario {
+  display: block;
+  margin: 8px auto;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #023e7d;
+  font-weight: bold;
+}
+
+#botao-formulario:hover {
+  background-color: #0466c8;
+}

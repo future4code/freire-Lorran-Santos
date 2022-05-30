@@ -31,12 +31,6 @@ ul {
   background-color: #001233;
 }
 
-#header-titulo {
-  text-align: center;
-  color: #0466c8;
-  margin-bottom: 16px;
-}
-
 .header-menu {
   display: flex;
   gap: 20px;
@@ -58,10 +52,6 @@ ul {
   background-color: #0466c8;
 }
 
-#header-frase {
-  text-align: center;
-  color: #979dac;
-}
 
 /* Conteudo Principal */
 
@@ -71,17 +61,25 @@ ul {
   gap: 40px;
   justify-content: center;
   margin: 0px auto;
+  flex-direction: column;
+  align-items: center;
 }
 
-.apresentacao {
+#main-titulo {
   text-align: center;
-  height: 600px;
-  background-color: #023e7d;
-  border-radius: 4px;
-  padding: 16px 32px;
-  width: 25ch;
+  color: #0466c8;
+  margin-bottom: 16px;
 }
 
-#apresentacao-texto {
-  margin-top: 25px;
+#main-frase {
+  text-align: center;
+  color: #979dac;
+}
+
+.stacks {
+  padding-top: 60px;
+}
+
+.stacks img{
+  width: 60px;
 }

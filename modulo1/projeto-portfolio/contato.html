@@ -8,8 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <title>Contato</title>
   <link rel="stylesheet" href="./css/style.css">
-  <title>Lorran Santos</title>
+  <link rel="stylesheet" href="./css/contato.css">
 </head>
 
 <body>
@@ -24,18 +25,26 @@
     </nav>
   </header>
 
-  <main class="container">
-    <section>
-      <h1 id="main-titulo">Lorran Santos</h1>
-      <p id="main-frase">Desenvolvedor Web Front End</p>
-    </section>
+  <main>
+    <div class="contato-container">
+      <h1 id="main-titulo">Entre em contato</h1>
+      <section class="contato-formulario">
+        <form action="#">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome">
 
-    <section class="stacks">
-      <img src="./img/icone-html.png" alt="">
-      <img src="./img/icone-css.png" alt="">
-      <img src="./img/icone-js.png" alt="">
-    </section>
+          <label for="email">Email:</label>
+          <input type="email" id="email">
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+
+          <button type="submit" id="botao-formulario">Enviar</button>
+        </form>
+      </section>
+    </div>
   </main>
+
 </body>
 
 </html>
