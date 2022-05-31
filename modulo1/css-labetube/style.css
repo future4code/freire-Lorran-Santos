@@ -1,0 +1,104 @@
+/* Estilos Gerais */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px 1fr 60px;
+  height: 100vh;
+}
+
+/* Estilos Cabeçalho */
+
+header {
+  background-color: orange;
+  grid-column: 1 / -1;
+  height: 60px;
+}
+
+.header {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  align-content: center;
+  align-items: center;
+}
+
+#busca {
+  display: flex;
+  gap: 10px;
+}
+
+#busca input {
+  padding: 4px 8px;
+  width: 70%;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+#busca button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+#busca button:hover {
+  border: 1px solid white;
+  color: white;
+  background-color: darkorange;
+}
+
+/* Estilos Principal */
+.main-container {
+  background-color: lightgray;
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 200px 200px;
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0px auto;
+  padding: 32px 0px;
+}
+
+.cards video {
+  width: 100%;
+}
+
+.cards > div {
+  display: grid;
+}
+
+.cards > a {
+  box-shadow: 1px 2px 5px black;
+  padding: 16px 4px;
+}
+
+/* Estilos footer */
+
+.footer {
+  display: grid;
+  grid-column: 1 / -1;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: orange;
+}
+
