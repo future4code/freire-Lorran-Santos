@@ -1,4 +1,3 @@
-
 /* CORES */
 
 :root {
@@ -14,7 +13,6 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
 
 img {
   max-width: 100%;
@@ -99,7 +97,6 @@ nav {
   padding: 8px;
 }
 
-
 .bolos {
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +125,6 @@ footer {
   padding: 20px;
   background-color: var(--rosa-escuro);
   width: 100%;
-  text-align: center;
 }
 
 footer p {
