@@ -1,0 +1,43 @@
+
+.main-container {
+  align-items: center;
+  justify-items: center
+}
+
+.video {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.video h2 {
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+.video > video {
+  max-width: 90%;
+}
+
+.pagina-inicial {
+  width: 100px;
+}
+
+a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: orange;
+  width: 150px;
+  text-align: center;
+  border: 1px solid orange;
+  border-radius: 4px;
+}
+
+a:hover {
+  background-color: darkorange;
+  border: 1px solid white;
+  color: white;
+}

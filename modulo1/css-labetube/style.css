@@ -1,0 +1,134 @@
+/* Estilos Gerais */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr 60px;
+  height: 100vh;
+}
+
+/* Estilos Cabeçalho */
+
+header {
+  background-color: orange;
+  grid-column: 1 / -1;
+  height: 60px;
+}
+
+.header {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  align-content: center;
+  align-items: center;
+}
+
+#busca {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#busca input {
+  padding: 4px 8px;
+  width: 70%;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+#busca button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+#busca button:hover {
+  border: 1px solid white;
+  color: white;
+  background-color: darkorange;
+}
+
+/* Estilos Principal */
+.main-container {
+  background-color: lightgray;
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0px auto;
+  padding: 32px 0px;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.cards video {
+  width: 90%;
+}
+
+.cards > a {
+  box-shadow: 1px 2px 5px black;
+  padding: 16px 4px;
+}
+
+.main-div-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+/* Estilos footer */
+
+.footer {
+  display: grid;
+  grid-column: 1 / -1;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: orange;
+}
+
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 80px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+  .main-container {
+    margin-top: 20px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .cards > a {
+    padding: 0px;
+  }
+}
