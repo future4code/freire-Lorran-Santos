@@ -120,10 +120,6 @@ function App() {
             </div>
           </section>
         </main>
-
-        <footer>
-          <h4>Oi! Eu moro no footer!</h4>
-        </footer>
       </div>
     </div>
   );
