@@ -19,6 +19,10 @@ border-radius: 50%;
 
 const Title = style.h4`
 margin-bottom: 15px;
+color: #afafaf;
+`
+const Text = style.p`
+color: #afafaf;
 `
 
 function CardGrande(props) {
@@ -27,7 +31,7 @@ function CardGrande(props) {
             <Image src={ props.imagem } />
             <div>
                 <Title>{ props.nome }</Title>
-                <p>{ props.descricao }</p>
+                <Text>{ props.descricao }</Text>
             </div>
         </BigcardContainer>
     )

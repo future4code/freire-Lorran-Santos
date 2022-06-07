@@ -1,15 +1,37 @@
 import React from "react";
-import "./App.css";
 import foto from "./img/foto-lorran.jpg";
 import CardGrande from "./components/CardGrande/CardGrande";
 import ImagemButton from "./components/ImagemButton/ImagemButton";
 import CardPequeno from "./components/CardPequeno/CardPequeno";
+import style from "styled-components";
+
+const Container = style.body`
+padding: 0px;
+margin: 0px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 30px;
+background-color: #2f2f2f
+`;
+
+const SectionPage = style.div`
+  width: 40vw;
+  margin: 10px 0;
+`;
+
+const Title = style.h2`
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <div className="page-section-container">
-        <h2>Dados pessoais</h2>
+    <Container>
+      <SectionPage>
+        <Title>Dados pessoais</Title>
         <CardGrande
           imagem={foto}
           nome="Lorran"
@@ -32,10 +54,10 @@ function App() {
           titulo="Endereço:"
           texto="Brasil - Rio Grande do Sul"
         />
-      </div>
+      </SectionPage>
 
-      <div className="page-section-container">
-        <h2>Experiências profissionais</h2>
+      <SectionPage>
+        <Title>Experiências profissionais</Title>
         <CardGrande
           imagem="https://uploads-ssl.webflow.com/5e790d30d198385b09366d8f/5efbb5055f2478ba2bc322d0_icone_gif.gif"
           nome="Labenu"
@@ -47,10 +69,10 @@ function App() {
           nome="NASA"
           descricao="Apontando defeitos."
         />
-      </div>
+      </SectionPage>
 
-      <div className="page-section-container">
-        <h2>Minhas redes sociais</h2>
+      <SectionPage>
+        <Title>Minhas redes sociais</Title>
         <ImagemButton
           imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png"
           texto="Facebook"
@@ -60,8 +82,8 @@ function App() {
           imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png"
           texto="Twitter"
         />
-      </div>
-    </div>
+      </SectionPage>
+    </Container>
   );
 }
 

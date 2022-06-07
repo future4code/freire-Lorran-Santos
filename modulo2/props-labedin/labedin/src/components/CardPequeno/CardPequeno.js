@@ -17,14 +17,19 @@ margin-right: 20px;
 
 const Title = style.h4`
 margin-right: 5px;
+color: #afafaf;
 `;
+
+const Text = style.p`
+color: #afafaf;
+`
 
 const CardPequeno = (props) => {
   return (
     <SmallCardContainer>
       <Image src={props.imagem} />
       <Title>{props.titulo}</Title>
-      <p>{props.texto}</p>
+      <Text>{props.texto}</Text>
     </SmallCardContainer>
   );
 };
