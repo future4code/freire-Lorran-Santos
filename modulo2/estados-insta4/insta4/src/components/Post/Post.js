@@ -6,6 +6,9 @@ import { IconeComContador } from "../IconeComContador/IconeComContador";
 import iconeCoracaoBranco from "../../img/favorite-white.svg";
 import iconeCoracaoPreto from "../../img/favorite.svg";
 import iconeComentario from "../../img/comment_icon.svg";
+import iconeSalvarBranco from "../../img/salvarBranco.png";
+import iconeSalvarPreto from "../../img/salvarPreto.png";
+import iconeCompartilhar from "../../img/compartilhar.png";
 import { SecaoComentario } from "../SecaoComentario/SecaoComentario";
 
 const PostContainer = styled.div`
@@ -46,6 +49,8 @@ class Post extends React.Component {
     numeroCurtidas: 0,
     comentando: false,
     numeroComentarios: 0,
+    salvo: false,
+    compartilhar: false,
   };
 
   onClickCurtida = () => {
@@ -77,6 +82,23 @@ class Post extends React.Component {
     });
   };
 
+  onClickSalvar = () => {
+    if (this.state.salvo === false) {
+      this.setState({
+        salvo: true,
+      });
+    } else {
+      this.setState({
+        salvo: false,
+      });
+    }
+  };
+  onClickCompartilhar = () => {
+    this.setState({
+      compartilhar: !this.state.compartilhar,
+    });
+  }
+
   render() {
     let iconeCurtida;
 
@@ -84,6 +106,14 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoPreto;
     } else {
       iconeCurtida = iconeCoracaoBranco;
+    }
+
+    let iconeSalvar;
+
+    if (this.state.salvo) {
+      iconeSalvar = iconeSalvarPreto;
+    } else {
+      iconeSalvar = iconeSalvarBranco;
     }
 
     let componenteComentario;
@@ -115,7 +145,16 @@ class Post extends React.Component {
             onClickIcone={this.onClickComentario}
             valorContador={this.state.numeroComentarios}
           />
+          <IconeComContador
+            icone={iconeCompartilhar}
+            onClick={this.onClickCompartilhar}
+          />
+          <IconeComContador
+            icone={iconeSalvar}
+            onClickIcone={this.onClickSalvar}
+          />
         </PostFooter>
+
         {componenteComentario}
       </PostContainer>
     );
