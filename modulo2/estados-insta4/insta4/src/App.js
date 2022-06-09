@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import Feed from './components/Feed/Feed';
 import Post from './components/Post/Post';
 
 const MainContainer = styled.div`
@@ -28,6 +29,8 @@ class App extends React.Component {
           fotoUsuario={'https://picsum.photos/50/50?=a:5'}
           fotoPost={'https://picsum.photos/200/150?=a:6'}
         />
+
+        <Feed />
       </MainContainer>
     );
   }
