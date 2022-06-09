@@ -73,12 +73,17 @@ class Feed extends React.Component {
 
   adicionaPost = () => {
     const novoPost = {
-      valorInputNome: this.state.valorInputNome,
-      valorInputFotoPerfil: this.state.valorInputFotoPerfil,
-      valorInputFotoPost: this.state.valorInputFotoPost,
+      nome: this.state.valorInputNome,
+      foto: this.state.valorInputFotoPerfil,
+      fotoPost: this.state.valorInputFotoPost,
     };
     const postNovo = [novoPost, ...this.state.pessoas];
-    this.setState({ pessoas: postNovo });
+    this.setState({
+      pessoas: postNovo,
+      valorInputNome: "",
+      valorInputFotoPerfil: "",
+      valorInputFotoPost: "",
+    });
   };
 
   render() {
