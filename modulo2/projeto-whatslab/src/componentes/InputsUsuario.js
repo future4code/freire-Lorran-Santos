@@ -47,13 +47,19 @@ const IconeEnviar = styled.img`
 
 class InputsUsuario extends React.Component {
   state = {
-    usuario: [],
+    usuario: [
+      {
+        nome: "",
+        mensagem: "",
+      },
+    ],
     inputNome: "",
     inputMensagem: "",
   };
 
   onChangeInputUsuario = (event) => {
     this.setState({ inputNome: event.target.value });
+    console.log()
   };
 
   onChangeInputMensagem = (event) => {
@@ -65,16 +71,16 @@ class InputsUsuario extends React.Component {
       nome: this.state.inputNome,
       mensagem: this.state.inputMensagem,
     };
-    const adicionarMensagem = [...this.state.usuario, novaMensagem];
-    this.setState({ usuario: adicionarMensagem });
+    const mensagemNova = [...this.state.usuario, novaMensagem];
+    this.setState({ usuario: mensagemNova });
   };
 
   render() {
     const mensagemAtualizada = this.state.usuario.map((usuario) => {
       return (
-        <div>
-          <p>{usuario.inputNome}</p>
-          <p>{usuario.inputMensagem}</p>
+        <div key={Math.random()}>
+          <p>{usuario.nome}</p>
+          <p>{usuario.mensagem}</p>
         </div>
       );
     });
@@ -85,12 +91,12 @@ class InputsUsuario extends React.Component {
             placeholder="Usuário"
             onChange={this.onChangeInputUsuario}
             value={this.state.inputNome}
-            />
+          />
           <InputMensagem
             placeholder="Mensagem"
             onChange={this.onChangeInputMensagem}
             value={this.state.inputMensagem}
-            />
+          />
           <BotaoEnviar onClick={this.adicionaMensagem}>
             <IconeEnviar src={iconeEnviar} />
           </BotaoEnviar>
