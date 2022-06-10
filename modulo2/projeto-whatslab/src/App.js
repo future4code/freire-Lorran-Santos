@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Header from "./componentes/Header/Header";
+import InputsUsuario from "./componentes/InputsUsuario";
+
+const ContainerApp = styled.div`
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 600px;
+  border: 1px solid #000000;
+  margin: 0px auto;
+  height: 100vh;
+  /* background-color: #afafaf; */
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+`;
+
+const Footer = styled.div`
+  text-align: center;
+  box-sizing: border-box;
+  max-width: 600px;
+  position: absolute;
+  bottom: 0px;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContainerApp>
+      <Header />
+      <Footer>
+        <InputsUsuario />
+      </Footer>
+    </ContainerApp>
   );
 }
 
