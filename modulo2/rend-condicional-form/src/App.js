@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 const Botao = styled.button`
   width: 150px;
-  margin: 15px auto;
+  margin: 20px auto;
 `;
 
 class App extends React.Component {
