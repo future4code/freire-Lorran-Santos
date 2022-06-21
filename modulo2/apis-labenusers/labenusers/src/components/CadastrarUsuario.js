@@ -1,6 +1,29 @@
 import React from "react";
 import axios from "axios";
-import ListaDeUsuarios from "./ListaDeUsuarios";
+import styled from "styled-components";
+
+const ContainerInputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+`;
+
+const Inputs = styled.input`
+  padding: 8px;
+  width: 60%;
+  border: none;
+  border-radius: 4px;
+  margin: 0px auto;
+`;
+
+const Botao = styled.button`
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+`;
 
 class CadastrarUsuario extends React.Component {
   state = {
@@ -8,8 +31,6 @@ class CadastrarUsuario extends React.Component {
     inputEmail: "",
     usuarios: [],
   };
-
-
 
   onChangeInputNome = (event) => {
     this.setState({ inputNome: event.target.value });
@@ -31,7 +52,12 @@ class CadastrarUsuario extends React.Component {
         { headers: { Authorization: "lorran-santos-freire" } }
       )
       .then((response) => {
-        this.setState({ usuarios: response.data });
+        this.setState({
+          usuarios: response.data,
+          inputNome: "",
+          inputEmail: "",
+        });
+        alert("Usuário cadastrado com sucesso!");
         console.log(response.data);
       })
       .catch((error) => {
@@ -41,19 +67,19 @@ class CadastrarUsuario extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <input
+      <ContainerInputs>
+        <Inputs
           value={this.state.inputNome}
           onChange={this.onChangeInputNome}
           placeholder="Nome"
         />
-        <input
+        <Inputs
           value={this.state.inputEmail}
           onChange={this.onChangeInputEmail}
           placeholder="Email"
         />
-        <button onClick={this.createUser}>Adicionar Usuário</button>
-      </div>
+        <Botao onClick={this.createUser}>Adicionar Usuário</Botao>
+      </ContainerInputs>
     );
   }
 }

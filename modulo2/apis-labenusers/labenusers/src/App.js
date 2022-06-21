@@ -1,9 +1,24 @@
 import React from "react";
 import "./App.css";
-import axios from "axios";
-import UsersList from "./components/ListaDeUsuarios";
 import CadastrarUsuario from "./components/CadastrarUsuario";
 import ListaDeUsuarios from "./components/ListaDeUsuarios";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 50vh;
+  margin: 0px auto;
+  align-items: center;
+  background-color: #3f3f3f;
+`
+const Botao = styled.button`
+padding: 4px 8px;
+border: none;
+border-radius: 4px;
+`
 
 class App extends React.Component {
   state = {
@@ -22,14 +37,14 @@ class App extends React.Component {
     );
 
     return (
-      <div className="App">
+      <Container>
         {renderizarTela}
-        <button onClick={this.onClickPagina}>
+        <Botao onClick={this.onClickPagina}>
           {this.state.pagina
             ? "Ir Para Lista de Usuarios"
             : "Voltar para cadastro"}
-        </button>
-      </div>
+        </Botao>
+      </Container>
     );
   }
 }

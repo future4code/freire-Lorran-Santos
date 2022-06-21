@@ -1,5 +1,19 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components";
+
+const Botao = styled.button`
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 16px;
+`;
+
+const Teste = styled.div`
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+`;
 
 class ListaDeUsuarios extends React.Component {
   state = {
@@ -39,15 +53,17 @@ class ListaDeUsuarios extends React.Component {
   render() {
     const renderizaUsuarios = this.state.usuarios.map((item) => {
       return (
-        <p key={item.id}>
-          {item.name}
-          <button value={item.id} onClick={() => this.deleteUser(item.id)}>
-            Deletar
-          </button>
-        </p>
+        <div>
+          <p key={item.id}>
+            {item.name}
+            <Botao value={item.id} onClick={() => this.deleteUser(item.id)}>
+              Deletar
+            </Botao>
+          </p>
+        </div>
       );
     });
-    return <div>{renderizaUsuarios}</div>;
+    return <Teste>{renderizaUsuarios}</Teste>;
   }
 }
 export default ListaDeUsuarios;
