@@ -1,15 +1,15 @@
 import React from "react";
 import axios from "axios";
+import ListaDeUsuarios from "./ListaDeUsuarios";
 
 class CadastrarUsuario extends React.Component {
   state = {
     inputNome: "",
     inputEmail: "",
+    usuarios: [],
   };
 
-  componentDidMount = () => {
-    this.getAllUsers();
-  };
+
 
   onChangeInputNome = (event) => {
     this.setState({ inputNome: event.target.value });
@@ -17,20 +17,6 @@ class CadastrarUsuario extends React.Component {
 
   onChangeInputEmail = (event) => {
     this.setState({ inputEmail: event.target.value });
-  };
-
-  getAllUsers = () => {
-    axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        { headers: { Authorization: "lorran-santos-freire" } }
-      )
-      .then((response) => {
-        this.setState({ usuarios: response.data });
-      })
-      .catch((error) => {
-        console.log(error.response.data);
-      });
   };
 
   createUser = () => {
@@ -53,17 +39,6 @@ class CadastrarUsuario extends React.Component {
       });
   };
 
-  deleteUser = (id) => {
-    axios
-      .delete(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,
-        { headers: { Authorization: "lorran-santos-freire" } }
-      )
-      .then(() => {
-        this.getAllUsers();
-        alert("Usuário deletado com sucesso");
-      });
-  };
   render() {
     return (
       <div className="App">
@@ -78,7 +53,6 @@ class CadastrarUsuario extends React.Component {
           placeholder="Email"
         />
         <button onClick={this.createUser}>Adicionar Usuário</button>
-        <button onClick={this.onClickPage}>Lista de usuarios</button>
       </div>
     );
   }

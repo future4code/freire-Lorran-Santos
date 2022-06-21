@@ -6,6 +6,24 @@ class ListaDeUsuarios extends React.Component {
     usuarios: [],
   };
 
+  componentDidMount = () => {
+    this.getAllUsers();
+  };
+
+  getAllUsers = () => {
+    axios
+      .get(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+        { headers: { Authorization: "lorran-santos-freire" } }
+      )
+      .then((response) => {
+        this.setState({ usuarios: response.data });
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  };
+
   deleteUser = (id) => {
     axios
       .delete(
