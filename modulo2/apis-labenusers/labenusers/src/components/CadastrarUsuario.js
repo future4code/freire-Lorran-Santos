@@ -40,29 +40,45 @@ class CadastrarUsuario extends React.Component {
     this.setState({ inputEmail: event.target.value });
   };
 
-  createUser = () => {
+  createUser = async () => {
     const body = {
       name: this.state.inputNome,
       email: this.state.inputEmail,
     };
-    axios
-      .post(
+    // axios
+    // .post(
+    //   "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+    //   body,
+    //   { headers: { Authorization: "lorran-santos-freire" } }
+    // )
+    //   .then((response) => {
+    // this.setState({
+    //   usuarios: response.data,
+    //   inputNome: "",
+    //   inputEmail: "",
+    // });
+    //     alert("Usuário cadastrado com sucesso!");
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    // console.log(error.response.data);
+    //   });
+
+    try {
+      const resposta = await axios.post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
         body,
         { headers: { Authorization: "lorran-santos-freire" } }
-      )
-      .then((response) => {
-        this.setState({
-          usuarios: response.data,
-          inputNome: "",
-          inputEmail: "",
-        });
-        alert("Usuário cadastrado com sucesso!");
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error.response.data);
+      );
+      this.setState({
+        usuarios: resposta.data,
+        inputNome: "",
+        inputEmail: "",
       });
+      alert("Usuário cadastrado com sucesso!");
+    } catch (error) {
+      console.log(error.resposta.data);
+    }
   };
 
   render() {

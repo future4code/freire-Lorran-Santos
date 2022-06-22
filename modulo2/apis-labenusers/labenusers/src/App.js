@@ -13,20 +13,20 @@ const Container = styled.div`
   margin: 0px auto;
   align-items: center;
   background-color: #3f3f3f;
-`
+`;
 const Botao = styled.button`
-padding: 4px 8px;
-border: none;
-border-radius: 4px;
-`
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+`;
 
 class App extends React.Component {
   state = {
     pagina: true,
   };
+
   onClickPagina = () => {
     this.setState({ pagina: !this.state.pagina });
-    console.log(this.state.pagina);
   };
 
   render() {
