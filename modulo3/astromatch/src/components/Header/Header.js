@@ -1,7 +1,7 @@
 import React from "react";
 import { Cabecalho } from "./styles";
 import { BsFillGearFill } from "react-icons/bs";
-import { FaUserFriends } from "react-icons/fa";
+import { RiHeartsFill } from "react-icons/ri";
 
 const Header = (props) => {
   return (
@@ -16,7 +16,7 @@ const Header = (props) => {
       </button>
       <button onClick={props.matches}>
         <h3>
-          <FaUserFriends size={"32px"} />
+          <RiHeartsFill size={"32px"}/>
         </h3>
       </button>
     </Cabecalho>

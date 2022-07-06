@@ -6,8 +6,9 @@ export const Icones = styled.footer`
   width: 100%;
   button {
     background-color: #00000000;
-    border: 1px solid #6c186d;
+    border: none;
     border-radius: 50%;
+    box-shadow: 0px 0px 10px #fff;
   }
   p {
     font-size: 60px;
@@ -15,6 +16,9 @@ export const Icones = styled.footer`
     padding: 0px 16px;
   }
   button:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px #000;
     transform: scale(1.3);
     transition: 0.3s;
   }

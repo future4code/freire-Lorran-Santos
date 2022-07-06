@@ -38,6 +38,7 @@ export const Descricao = styled.div`
 export const NomeIdade = styled.div`
   display: flex;
   gap: 8px;
+  font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
   h3 {
     font-size: 32px;
   }

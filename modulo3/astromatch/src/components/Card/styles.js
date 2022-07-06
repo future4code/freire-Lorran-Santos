@@ -11,7 +11,7 @@ export const Container = styled.div`
   text-align: center;
   width: 500px;
   height: 720px;
-  border: 2px solid #000000;
+  border: 2px solid #331343;
   border-radius: 8px;
   background-image: linear-gradient(#6c186d, #a624a8)
 `;

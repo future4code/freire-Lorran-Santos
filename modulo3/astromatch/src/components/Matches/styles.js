@@ -26,6 +26,7 @@ export const ItemLista = styled.li`
     border: none;
     border-radius: 4px;
     transition: 0.3s;
+    cursor: pointer;
   }
 `;
 
@@ -53,5 +54,10 @@ export const BotaoLimpaMatch = styled.div`
     border-radius: 4px;
     background-color: #a624a8;
     cursor: pointer;
+    box-shadow: 0px 0px 4px #000000;
+    &:hover {
+      transform: scale(1.3);
+      transition: 0.3s;
+    }
   }
 `;
