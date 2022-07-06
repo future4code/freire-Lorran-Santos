@@ -7,25 +7,38 @@ import {
   Icones,
 } from "./styles";
 import { TiDeleteOutline, TiHeartFullOutline } from "react-icons/ti";
+import { useState } from "react";
+import Header from "../Header/Header";
+import Home from "../Home/Home";
+import Matches from "../Matches/Matches";
+import Profile from "../Profile/Profile";
 
-const Card = (props) => {
+const Card = () => {
+  const [pagina, setPagina] = useState("home");
+
+  const trocaDePagina = () => {
+    switch (pagina) {
+      case "home":
+        return <Profile />
+      case "matches":
+        return <Matches />;
+      default:
+        break;
+    }
+  };
+
+  const irHome = () => {
+    setPagina("home");
+  };
+
+  const irMatches = () => {
+    setPagina("matches");
+  };
+
   return (
     <Container>
-      <h1>astromatch</h1>
-      <PerfilCompleto>
-        <Imagem src={props.foto} />
-        <Descricao>
-          <NomeIdade>
-            <h3>{props.nome},</h3>
-            <p>{props.idade}</p>
-          </NomeIdade>
-          <p>{props.bio}</p>
-        </Descricao>
-      </PerfilCompleto>
-      <Icones>
-        <TiDeleteOutline size="80px" color="red"/>
-        <TiHeartFullOutline size="80px" color="green"/>
-      </Icones>
+      <Header home={irHome} matches={irMatches} />
+      {trocaDePagina()}
     </Container>
   );
 };
