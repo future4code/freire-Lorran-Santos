@@ -21,8 +21,6 @@ const Profile = () => {
       });
   };
 
-
-
   const choosePerson = () => {
     const body = {
       id: perfil.id,
@@ -34,7 +32,7 @@ const Profile = () => {
         body
       )
       .then(() => {
-        setLoader(true)
+        setLoader(true);
         getProfile();
       })
       .catch((err) => {
@@ -59,7 +57,6 @@ const Profile = () => {
         botaoMatch={choosePerson}
       />
       {!loader && <Loader />}
-      
     </div>
   );
 };

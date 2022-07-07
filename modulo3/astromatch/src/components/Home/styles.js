@@ -16,17 +16,6 @@ export const PerfilCompleto = styled.div`
     width: 300px;
     display: flex;
   }
-  
-  animation-name: slide;
-  animation-duration: 2s;
-  @keyframes slide {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `;
 export const Imagem = styled.img`
   width: 400px;
