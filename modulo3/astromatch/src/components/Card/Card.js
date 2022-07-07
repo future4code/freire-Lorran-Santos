@@ -1,15 +1,6 @@
-import {
-  Container,
-  Imagem,
-  PerfilCompleto,
-  Descricao,
-  NomeIdade,
-  Icones,
-} from "./styles";
-import { TiDeleteOutline, TiHeartFullOutline } from "react-icons/ti";
+import { Container } from "./styles";
 import { useState } from "react";
 import Header from "../Header/Header";
-import Home from "../Home/Home";
 import Matches from "../Matches/Matches";
 import Profile from "../Profile/Profile";
 
@@ -19,7 +10,7 @@ const Card = () => {
   const trocaDePagina = () => {
     switch (pagina) {
       case "home":
-        return <Profile />
+        return <Profile />;
       case "matches":
         return <Matches />;
       default:

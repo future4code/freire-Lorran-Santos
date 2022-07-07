@@ -4,16 +4,38 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 400px) {
+    gap: 40px;
+  }
 `;
 export const PerfilCompleto = styled.div`
   position: relative;
   box-shadow: 0px 0px 10px #000000;
   border-radius: 8px;
+  @media (max-width: 400px) {
+    width: 300px;
+    display: flex;
+  }
+  
+  animation-name: slide;
+  animation-duration: 2s;
+  @keyframes slide {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 export const Imagem = styled.img`
   width: 400px;
   height: 500px;
   border-radius: 8px;
+  @media (max-width: 400px) {
+    width: 300px;
+    height: 450px;
+  }
 `;
 
 export const Descricao = styled.div`
@@ -32,6 +54,9 @@ export const Descricao = styled.div`
   justify-content: center;
   p {
     font-size: 18px;
+  }
+  @media (max-width: 400px) {
+    width: 260px;
   }
 `;
 

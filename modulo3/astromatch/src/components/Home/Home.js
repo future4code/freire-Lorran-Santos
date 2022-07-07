@@ -7,7 +7,6 @@ import {
   Icones,
   Container,
 } from "./styles";
-import { TiDeleteOutline, TiHeartFullOutline } from "react-icons/ti";
 import Footer from "../Footer/Footer";
 
 const Home = (props) => {

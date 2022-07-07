@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "../Loader/Loader";
 import axios from "axios";
 import {
   ListaMatches,
@@ -10,6 +11,7 @@ import {
 
 const Matches = () => {
   const [matches, setMatches] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   const getMatches = () => {
     axios
@@ -17,6 +19,7 @@ const Matches = () => {
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lorran-santos-freire/matches"
       )
       .then((response) => {
+        setLoader(true);
         setMatches(response.data.matches);
       });
   };
@@ -30,12 +33,15 @@ const Matches = () => {
   };
 
   useEffect(() => {
-    getMatches();
+    setTimeout(() => {
+      getMatches();
+    }, 1000
+    );
   }, []);
 
   const listaDeMatches = matches.map((item) => {
     return (
-      <ListaMatches>
+      <ListaMatches key={item.name}>
         <ItemLista>
           <FotoMatch src={item.photo} />
           {item.name}
@@ -54,6 +60,7 @@ const Matches = () => {
       <BotaoLimpaMatch>
         <button onClick={clear}>Limpar Matches</button>
       </BotaoLimpaMatch>
+      {!loader && <Loader />}
     </ContainerMatches>
   );
 };

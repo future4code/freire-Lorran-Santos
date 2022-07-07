@@ -22,4 +22,19 @@ export const Icones = styled.footer`
     transform: scale(1.3);
     transition: 0.3s;
   }
+  @media (max-width: 400px) {
+    width: 100%;
+    gap: 80px;
+    button:hover {
+      background-color: #00000000;
+      transform: none;
+      transition: none;
+      box-shadow: 0px 0px 10px #ffffff;
+    }
+    button:active {
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px #000;
+      transform: scale(1.3);
+    }
+  }
 `;

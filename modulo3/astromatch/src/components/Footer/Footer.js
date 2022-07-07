@@ -1,7 +1,9 @@
-import { TiDeleteOutline, TiHeartFullOutline } from "react-icons/ti";
+import { TiHeartFullOutline } from "react-icons/ti";
 import { Icones } from "./styles";
 
 const Footer = (props) => {
+
+
   return (
     <div>
       <Icones>

@@ -5,6 +5,9 @@ export const ListaMatches = styled.ul`
   text-align: left;
   font-size: 24px;
   display: flex;
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
 `;
 
 export const FotoMatch = styled.img`
@@ -12,6 +15,10 @@ export const FotoMatch = styled.img`
   height: 60px;
   border: none;
   border-radius: 50%;
+  @media (max-width: 400px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const ItemLista = styled.li`
@@ -28,6 +35,9 @@ export const ItemLista = styled.li`
     transition: 0.3s;
     cursor: pointer;
   }
+  @media (max-width: 400px) {
+    height: 60px;
+  }
 `;
 
 export const ContainerMatches = styled.div`
@@ -40,6 +50,10 @@ export const ContainerMatches = styled.div`
   box-sizing: border-box;
   position: relative;
   background-color: #6c186d;
+  @media (max-width: 400px) {
+    width: 300px;
+    height: 550px;
+  }
 `;
 
 export const BotaoLimpaMatch = styled.div`
@@ -59,5 +73,8 @@ export const BotaoLimpaMatch = styled.div`
       transform: scale(1.3);
       transition: 0.3s;
     }
+  }
+  @media (max-width: 400px) {
+    width: 268px;
   }
 `;

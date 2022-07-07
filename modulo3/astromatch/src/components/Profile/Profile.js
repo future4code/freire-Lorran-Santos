@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Card from "../Card/Card";
 import Home from "../Home/Home";
+import Loader from "../Loader/Loader";
 
 const Profile = () => {
   const [perfil, setPerfil] = useState([]);
-  const [match, setMatch] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   const getProfile = () => {
     axios
@@ -13,6 +13,7 @@ const Profile = () => {
         "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lorran-santos-freire/person"
       )
       .then((response) => {
+        setLoader(true);
         setPerfil(response.data.profile);
       })
       .catch((err) => {
@@ -20,19 +21,7 @@ const Profile = () => {
       });
   };
 
-  const onClickTrocaPerfil = () => {
-    axios
-      .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lorran-santos-freire/person"
-      )
-      .then((response) => {
-        setPerfil(response.data.profile);
-        console.log(response.data);
-      })
-      .catch((err) => {
-        console.log(err.data);
-      });
-  };
+
 
   const choosePerson = () => {
     const body = {
@@ -45,6 +34,7 @@ const Profile = () => {
         body
       )
       .then(() => {
+        setLoader(true)
         getProfile();
       })
       .catch((err) => {
@@ -53,18 +43,24 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    getProfile();
+    setTimeout(() => {
+      getProfile();
+    }, 1000);
   }, []);
 
   return (
-    <Home
-      nome={perfil.name}
-      idade={perfil.age}
-      foto={perfil.photo}
-      bio={perfil.bio}
-      botao={onClickTrocaPerfil}
-      botaoMatch={choosePerson}
-    />
+    <div>
+      <Home
+        nome={perfil.name}
+        idade={perfil.age}
+        foto={perfil.photo}
+        bio={perfil.bio}
+        botao={getProfile}
+        botaoMatch={choosePerson}
+      />
+      {!loader && <Loader />}
+      
+    </div>
   );
 };
 
