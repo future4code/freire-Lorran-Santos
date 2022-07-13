@@ -5,7 +5,6 @@ export const Background = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  width: 100vw;
   background-image: linear-gradient(#050040, #6200c3);
   color: #ffffff;
 `;

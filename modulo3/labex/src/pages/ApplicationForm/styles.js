@@ -5,6 +5,7 @@ export const Background = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100vw;
   background-image: linear-gradient(#050040, #6200c3);
   color: #ffffff;
 `;
@@ -13,16 +14,24 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
-  h1 {
-    text-align: center;
-  }
+  text-align: center;
 `;
 
 export const Form = styled.div`
+  width: 100%;
+  text-align: center;
   form {
     text-align: center;
     display: flex;
     flex-direction: column;
+  }
+  select {
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px #000000;
+    padding: 8px 16px;
+    margin: 8px auto;
+    width: 60vw;
   }
   input {
     border: none;
@@ -30,7 +39,7 @@ export const Form = styled.div`
     box-shadow: 0px 0px 4px #000000;
     padding: 8px 16px;
     margin: 8px auto;
-    width: 60%
+    width: 60%;
   }
 `;
 

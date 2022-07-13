@@ -31,3 +31,20 @@ export const Buttons = styled.div`
     box-shadow: 0px 0px 4px #000000;
   }
 `;
+
+export const ContainerTrip = styled.div`
+  line-height: 1.3;
+  width: 70vw;
+  margin: 16px auto;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px #000000;
+  padding: 0px 12px;
+  span {
+    font-weight: bold;
+  }
+  p {
+    margin: 12px;
+  }
+`
