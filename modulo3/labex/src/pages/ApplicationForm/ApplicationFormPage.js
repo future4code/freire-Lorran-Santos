@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { goToBack } from '../../routes/coordinator';
+import { goToBack, goToListTripsPage } from '../../routes/coordinator';
 import { Background, Container, Form, Buttons } from './styles';
 
 const ApplicationFormPage = () => {
   const [trips, setTrips] = useState([]);
-  const [value, setValue] = useState('');
+  const [form, setForm] = useState({
+    trip: '',
+    name: '',
+    age: '',
+    applicationText: '',
+    profession: '',
+    country: '',
+  });
   const navigate = useNavigate();
 
-  const onChangeValue = (ev) => {
-    setValue(ev.target.value);
-    console.log(value);
+  const onChangeForm = (event) => {
+    event.preventDefault();
+    setForm({ ...form, [event.target.name]: event.target.value });
+    console.log(form);
   };
 
   const getTrips = () => {
@@ -28,6 +36,11 @@ const ApplicationFormPage = () => {
     getTrips();
   }, []);
 
+  const sendForm = (event) => {
+    event.preventDefault();
+    setForm({ ...form, [event.target.name]: '' });
+  };
+
   const optionsList = trips.map((item, index) => {
     return (
       <option key={index} value={item.name}>
@@ -41,38 +54,44 @@ const ApplicationFormPage = () => {
       <Container>
         <h1>Inscreva-se para uma viagem inesquecível:</h1>
         <Form>
-          <form>
-            <select>
-              <option value={''}>Escolha Uma viagem</option>
+          <form onSubmit={sendForm}>
+            {/* <select>
+              <option>Escolha Uma viagem</option>
               {optionsList}
-            </select>
+            </select> */}
             <input
               type={'text'}
               placeholder="Nome"
-              value={value}
-              onChange={onChangeValue}
+              name="name"
+              value={form.name}
+              onChange={onChangeForm}
             />
             <input
               type={'text'}
               placeholder="Idade"
-              value={value}
-              onChange={onChangeValue}
+              name="age"
+              value={form.age}
+              onChange={onChangeForm}
             />
             <input
               type={'text'}
               placeholder="Texto de candidatura"
-              onChange={onChangeValue}
+              name="applicationText"
+              value={form.applicationText}
+              onChange={onChangeForm}
             />
             <input
               type={'text'}
               placeholder="Profissão"
-              onChange={onChangeValue}
+              name="profession"
+              value={form.profession}
+              onChange={onChangeForm}
             />
-            <select></select>
+            {/* <select></select> */}
+            <button>Inscrever-se</button>
           </form>
           <Buttons>
-            <button onClick={() => goToBack(navigate)}>Voltar</button>
-            <button>Inscrever-se</button>
+            <button onClick={() => goToListTripsPage(navigate)}>Voltar</button>
           </Buttons>
         </Form>
       </Container>
