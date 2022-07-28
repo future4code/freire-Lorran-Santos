@@ -8,12 +8,12 @@ import React, { useContext, useState } from 'react';
 import Comment from '../../components/Comment/Comment';
 import PostsContext from '../../context/PostsContext';
 import { GetComment } from '../../services/createComment/CreateComment';
-import { VoteData } from '../../services/VoteData';
+import { ChangeVote, VoteData } from '../../services/vote/VoteData';
 import {
   CardPost,
+  UserPost,
   Likes,
   ButtonsCard,
-  CommentCount,
   Vote,
   VoteZero,
 } from './styles';
@@ -21,22 +21,37 @@ import {
 const Card = (props) => {
   const { votes } = useContext(PostsContext);
   const [commentSection, setCommentSection] = useState(false);
-  // Comentário
+  const [like, setLike] = useState(false);
   const id = props.postId;
+
   const comments = () => {
     setCommentSection(!commentSection);
   };
 
+  const likeDesLike = () => {
+    if (like === false) {
+      setLike(true);
+      VoteData(id);
+    } else if (like === true) {
+      setLike(false);
+      ChangeVote(id);
+    }
+  };
+
+  // Caso o Like deslike der errado => () => VoteData(props.postId)
+
   return (
     <CardPost>
-      <p>enviado por: {props.name}</p>
+      <UserPost>
+        enviado por: <span>{props.name}</span>
+      </UserPost>
       <p>{props.body}</p>
       <p>{votes}</p>
       <ButtonsCard>
         <Likes>
           {/* Botões de Like e Deslike */}
           <Badge color={'primary'}>
-            <Button onClick={() => VoteData(props.postId)}>
+            <Button onClick={() => likeDesLike}>
               <ThumbUpOffAlt />
             </Button>
           </Badge>
@@ -51,11 +66,12 @@ const Card = (props) => {
           {/* Fim Botões Like Deslike */}
         </Likes>
         {/* Início seção comentário */}
-        <Badge color={'primary'}>
-          <Button onClick={comments}>
-            <ChatBubbleOutline />
-            <CommentCount>{props.commentCount}</CommentCount>
-          </Button>
+        <Badge color={'primary'} badgeContent={props.commentCount}>
+          <ChatBubbleOutline
+            cursor={'pointer'}
+            color={'primary'}
+            onClick={comments}
+          />
         </Badge>
       </ButtonsCard>
       {commentSection ? <Comment postId={props.postId} /> : null}

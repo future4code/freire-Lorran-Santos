@@ -5,7 +5,7 @@ const PostsProvider = (props) => {
   const [posts, setPosts] = useState([]);
   const [comment, setComment] = useState([]);
   const [votes, setVotes] = useState();
-  const [color, setColor] = useState('');
+  const [loading, setLoading] = useState(false);
 
   return (
     <PostsContext.Provider
@@ -16,8 +16,8 @@ const PostsProvider = (props) => {
         setComment,
         votes,
         setVotes,
-        color,
-        setColor,
+        loading,
+        setLoading,
       }}
     >
       {props.children}

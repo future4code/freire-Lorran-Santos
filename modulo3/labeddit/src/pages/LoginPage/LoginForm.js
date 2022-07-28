@@ -26,6 +26,7 @@ const LoginForm = () => {
           variant={'outlined'}
           onChange={onChange}
           label={'Email'}
+          required
         />
         <TextField
           fullWidth
@@ -35,6 +36,7 @@ const LoginForm = () => {
           onChange={onChange}
           variant={'outlined'}
           label={'Senha'}
+          required
         />
         <Button
           fullWidth

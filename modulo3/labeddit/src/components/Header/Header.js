@@ -8,6 +8,11 @@ import { StyledToolBar } from './styles';
 const Header = () => {
   const navigate = useNavigate();
 
+  const onClickLogout = () => {
+    localStorage.clear('token');
+    goToLogin(navigate);
+  };
+
   return (
     <AppBar
       position="static"
@@ -21,7 +26,23 @@ const Header = () => {
         >
           LabEddit
         </Button>
-        <Button
+        {localStorage.getItem('token') ? (
+          <Button onClick={onClickLogout} variant="outlined">
+            {' '}
+            Logout{' '}
+          </Button>
+        ) : (
+          <Button
+            onClick={() => {
+              goToLogin(navigate);
+            }}
+            variant="outlined"
+            color="primary"
+          >
+            Login
+          </Button>
+        )}
+        {/* <Button
           onClick={() => {
             goToLogin(navigate);
           }}
@@ -29,7 +50,7 @@ const Header = () => {
           color="primary"
         >
           Login
-        </Button>
+        </Button> */}
       </StyledToolBar>
     </AppBar>
   );
