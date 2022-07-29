@@ -8,6 +8,6 @@ export const LoaderContainer = styled.div`
   align-items: center;
   padding-top: 50%;
   @media(min-width: 750px) {
-    padding-top: 25%
+    padding-top: 10%
   }
 `;

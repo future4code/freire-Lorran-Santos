@@ -17,14 +17,7 @@ export const TextComment = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  /* padding: 8px 16px;
-  border: none;
-  border-radius: 16px;
-  width: 70%;
-  max-width: 400px;
-  background-color: #ececec;
-  box-shadow: 0px 0px 4px #000000; */
-  /* margin: 16px 0px; */
+  word-wrap: break-word;
   p {
     margin: 0px;
   }
@@ -36,6 +29,7 @@ export const User = styled.div`
   padding: 4px;
   background-color: #4646ff;
   color: #ffffff;
+  word-wrap: break-word;
 `;
 
 export const CommentaryContainer = styled.div`
@@ -50,6 +44,7 @@ export const CommentaryContainer = styled.div`
   max-width: 400px;
   background-color: #ececec;
   box-shadow: 0px 0px 4px #000000;
+  word-wrap: break-word;
 `;
 
 export const Likes = styled.div`

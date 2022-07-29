@@ -13,6 +13,7 @@ import PostPage from '../PostPage/PostPage';
 import useProtectedPage from '../../hooks/usePotectedPage';
 import Paginations from '../../components/Paginations/Paginations';
 import { KeyboardArrowUp, Refresh } from '@mui/icons-material';
+import { goToLogin } from '../../router/coordinator';
 
 const FeedPage = () => {
   useProtectedPage();
