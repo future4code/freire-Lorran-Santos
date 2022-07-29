@@ -15,7 +15,7 @@ export const CreateComment = (id, body) => {
 };
 
 export const GetComment = (id) => {
-  const { setComment } = useContext(PostsContext);
+  const { comment, setComment } = useContext(PostsContext);
   useEffect(() => {
     axios
       .get(`${BASE_URL}/posts/${id}/comments`, token)
@@ -23,7 +23,7 @@ export const GetComment = (id) => {
         setComment(res.data);
       })
       .catch((err) => console.log(err.res.data.message));
-  }, []);
+  }, [comment]);
 };
 
 export const CreateCommentVote = (id) => {
@@ -48,4 +48,10 @@ export const ChangeCommentVote = (id) => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+export const DeleteCommentVote = (id) => {
+  axios
+    .delete(`${BASE_URL}/comments/${id}/votes`, token)
+    .then((res) => console.log(res.data).catch((err) => console.log(err)));
 };

@@ -1,12 +1,18 @@
-import { ThumbDownAltOutlined, ThumbUpAltOutlined } from '@mui/icons-material';
-import { Button, TextField } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
+import {
+  ThumbDownAlt,
+  ThumbDownAltOutlined,
+  ThumbUpAlt,
+  ThumbUpAltOutlined,
+} from '@mui/icons-material';
+import { Button } from '@mui/material';
+import React, { useContext } from 'react';
 import PostsContext from '../../context/PostsContext';
 import useForm from '../../hooks/useForm';
 import {
   ChangeCommentVote,
   CreateComment,
   CreateCommentVote,
+  DeleteCommentVote,
   GetComment,
 } from '../../services/createComment/CreateComment';
 import {
@@ -30,32 +36,48 @@ const Comment = (props) => {
     CreateComment(id, form);
   };
 
-  // Gerar cores aleatóriamente
-  let x = Math.floor(Math.random() * 256);
-  let y = Math.floor(Math.random() * 256);
-  let z = Math.floor(Math.random() * 256);
-  let bgColorRandom = 'rgb(' + x + ', ' + y + ', ' + z + ')';
-
   // Mostrar comentários
   GetComment(id);
+
+  // Renderizar os comentários
   const renderComments = comment.map((comments, index) => {
     return (
       <CommentaryContainer key={index}>
+        {/* início foto e comentário do usuário */}
         <TextComment>
-          <User style={{ backgroundColor: `${bgColorRandom}` }}>
+          <User>
             <p>{comments.username.substr(0, 2).toUpperCase()}</p>
           </User>
           <p>{comments.body[0].toUpperCase() + comments.body.substr(1)}</p>
         </TextComment>
+        {/* fim foto e comentário do usuário */}
+        {/* início seção de likes */}
         <Likes>
-          <Button onClick={() => CreateCommentVote(comments.id)}>
-            <ThumbUpAltOutlined />
+          <Button
+            onClick={() => {
+              comments.userVote > 0
+                ? DeleteCommentVote(comments.id)
+                : CreateCommentVote(comments.id);
+            }}
+          >
+            {comments.userVote > 0 ? <ThumbUpAlt /> : <ThumbUpAltOutlined />}
           </Button>
-          <p>{comments.voteSum}</p>
-          <Button onClick={() => ChangeCommentVote(comments.id)}>
-            <ThumbDownAltOutlined />
+          {comments.voteSum ? <p>{comments.voteSum}</p> : null}
+          <Button
+            onClick={() => {
+              comments.userVote < 0
+                ? DeleteCommentVote(comments.id)
+                : ChangeCommentVote(comments.id);
+            }}
+          >
+            {comments.userVote < 0 ? (
+              <ThumbDownAlt color="error" />
+            ) : (
+              <ThumbDownAltOutlined color="error" />
+            )}
           </Button>
         </Likes>
+        {/* fim seção de likes */}
       </CommentaryContainer>
     );
   });

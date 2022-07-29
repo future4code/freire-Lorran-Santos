@@ -2,13 +2,18 @@ import {
   ThumbDownOffAlt,
   ThumbUpOffAlt,
   ChatBubbleOutline,
+  ThumbUpAlt,
+  ThumbDownAlt,
 } from '@mui/icons-material';
 import { Badge, Button } from '@mui/material';
 import React, { useContext, useState } from 'react';
 import Comment from '../../components/Comment/Comment';
 import PostsContext from '../../context/PostsContext';
-import { GetComment } from '../../services/createComment/CreateComment';
-import { ChangeVote, VoteData } from '../../services/vote/VoteData';
+import {
+  ChangeVote,
+  DeletePostVote,
+  VoteData,
+} from '../../services/vote/VoteData';
 import {
   CardPost,
   UserPost,
@@ -21,24 +26,12 @@ import {
 const Card = (props) => {
   const { votes } = useContext(PostsContext);
   const [commentSection, setCommentSection] = useState(false);
-  const [like, setLike] = useState(false);
   const id = props.postId;
+  const userVote = props.userVote;
 
   const comments = () => {
     setCommentSection(!commentSection);
   };
-
-  const likeDesLike = () => {
-    if (like === false) {
-      setLike(true);
-      VoteData(id);
-    } else if (like === true) {
-      setLike(false);
-      ChangeVote(id);
-    }
-  };
-
-  // Caso o Like deslike der errado => () => VoteData(props.postId)
 
   return (
     <CardPost>
@@ -51,17 +44,29 @@ const Card = (props) => {
         <Likes>
           {/* Botões de Like e Deslike */}
           <Badge color={'primary'}>
-            <Button onClick={() => likeDesLike}>
-              <ThumbUpOffAlt />
+            <Button
+              onClick={() => {
+                userVote > 0 ? DeletePostVote(props.postId) : VoteData(id);
+              }}
+            >
+              {userVote > 0 ? <ThumbUpAlt /> : <ThumbUpOffAlt />}
             </Button>
           </Badge>
-          {props.vote > 0 ? (
+          {props.vote >= 0 ? (
             <Vote>{props.vote}</Vote>
           ) : (
-            <VoteZero>{props.votes}</VoteZero>
+            <VoteZero>{props.vote}</VoteZero>
           )}
-          <Button>
-            <ThumbDownOffAlt />
+          <Button
+            onClick={() => {
+              userVote < 0 ? DeletePostVote(id) : ChangeVote(id);
+            }}
+          >
+            {userVote < 0 ? (
+              <ThumbDownAlt color="error" />
+            ) : (
+              <ThumbDownOffAlt color="error" />
+            )}
           </Button>
           {/* Fim Botões Like Deslike */}
         </Likes>

@@ -5,6 +5,7 @@ import useForm from '../../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
 import { SignUp } from '../../services/user/user';
 import PostsContext from '../../context/PostsContext';
+import { goToLogin } from '../../router/coordinator';
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -81,6 +82,9 @@ const SignupForm = () => {
           Cadastrar
         </Button>
       </Form>
+      <Button onClick={() => goToLogin(navigate)} fullWidth variant="outlined">
+        Login
+      </Button>
     </ContainerForm>
   );
 };

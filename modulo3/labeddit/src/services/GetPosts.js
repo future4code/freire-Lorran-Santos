@@ -4,10 +4,10 @@ import { BASE_URL, token } from '../constants/urls';
 import PostsContext from '../context/PostsContext';
 
 const GetPosts = () => {
-  const { setPosts, setLoading } = useContext(PostsContext);
+  const { page, setPosts, setLoading } = useContext(PostsContext);
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/posts`, token)
+      .get(`${BASE_URL}/posts?page=${page}`, token)
       .then((res) => {
         setPosts(res.data);
         setLoading(true);
@@ -15,7 +15,7 @@ const GetPosts = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [`${BASE_URL}/posts`]);
+  }, [page]);
 };
 
 export default GetPosts;

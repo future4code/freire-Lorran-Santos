@@ -34,6 +34,8 @@ export const User = styled.div`
   border: none;
   border-radius: 50%;
   padding: 4px;
+  background-color: #4646ff;
+  color: #ffffff;
 `;
 
 export const CommentaryContainer = styled.div`
@@ -44,7 +46,7 @@ export const CommentaryContainer = styled.div`
   padding: 4px 16px;
   border: none;
   border-radius: 16px;
-  width: 70%;
+  width: 75%;
   max-width: 400px;
   background-color: #ececec;
   box-shadow: 0px 0px 4px #000000;
@@ -53,6 +55,7 @@ export const CommentaryContainer = styled.div`
 export const Likes = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   margin-top: 8px;
   p {
@@ -63,6 +66,7 @@ export const Likes = styled.div`
     height: 25px;
     width: 25px;
     border-radius: 100%;
-    background-color: #ff0000;
+    color: #ffffff;
+    background-color: #4646ff;
   }
 `;

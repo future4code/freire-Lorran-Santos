@@ -17,13 +17,13 @@ export const Login = (body, clear, navigate) => {
 
 export const SignUp = (body, clear, navigate) => {
   axios
-  .post(`${BASE_URL}/users/signup`, body)
-  .then((res) => {
-    localStorage.setItem('token', res.data.token);
-    clear();
-    goToFeed(navigate);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+    .post(`${BASE_URL}/users/signup`, body)
+    .then((res) => {
+      localStorage.setItem('token', res.data.token);
+      clear();
+      goToFeed(navigate);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };

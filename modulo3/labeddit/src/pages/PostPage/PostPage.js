@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, Form } from './styles';
 import useForm from '../../hooks/useForm';
 import { CreatePost } from '../../services/post/Posts';
+import GetPosts from '../../services/GetPosts';
 
 const PostPage = () => {
   const [form, onChange, clear] = useForm({ title: '', body: '' });
@@ -37,15 +38,6 @@ const PostPage = () => {
           value={form.body}
           required
         />
-        {/* <TextField
-          fullWidth
-          type={'text'}
-          name={'body'}
-          // value={form.body}
-          onChange={onChange}
-          placeholder="Digite a sua publicação"
-          multiline
-        /> */}
         <Button type={'submit'} variant="outlined">
           Publicar
         </Button>

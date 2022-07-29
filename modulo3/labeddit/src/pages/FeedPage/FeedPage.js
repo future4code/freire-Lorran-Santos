@@ -1,12 +1,18 @@
-import { Button } from '@mui/material';
 import React, { useState, useContext } from 'react';
 import Card from '../../components/Card/Card';
 import PostsContext from '../../context/PostsContext';
 import GetPosts from '../../services/GetPosts';
-import { Container, StyledButton } from './styles';
+import {
+  Container,
+  RefreshButton,
+  StyledButton,
+  StyledBackToTop,
+} from './styles';
 import Loading from '../../components/Loading/Loading';
 import PostPage from '../PostPage/PostPage';
 import useProtectedPage from '../../hooks/usePotectedPage';
+import Paginations from '../../components/Paginations/Paginations';
+import { KeyboardArrowUp, Refresh } from '@mui/icons-material';
 
 const FeedPage = () => {
   useProtectedPage();
@@ -14,7 +20,7 @@ const FeedPage = () => {
   const [newPost, setNewPost] = useState(false);
 
   GetPosts();
-  // console.log(posts);
+
   const renderPosts = posts.map((post) => {
     return (
       <Card
@@ -24,6 +30,7 @@ const FeedPage = () => {
         body={post.body}
         name={post.username}
         vote={post.voteSum}
+        userVote={post.userVote}
         commentCount={post.commentCount}
       />
     );
@@ -32,25 +39,32 @@ const FeedPage = () => {
   // Post Page
   const createPost = () => {
     setNewPost(!newPost);
-    // console.log(newPost);
   };
 
   return (
     <Container>
       {newPost ? <PostPage /> : null}
+      <RefreshButton onClick={() => window.location.reload()}>
+        <Refresh />
+      </RefreshButton>
       {newPost ? (
         <StyledButton variant="contained" onClick={createPost}>
-          Descartar
+          Fechar
         </StyledButton>
       ) : (
         <StyledButton variant="contained" onClick={createPost}>
           Criar Post
         </StyledButton>
       )}
-      {/* <Button variant="contained" onClick={createPost}>
-        Criar Post
-      </Button> */}
       {renderPosts}
+      <StyledBackToTop
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        <KeyboardArrowUp />
+      </StyledBackToTop>
+      <Paginations />
       {!loading && <Loading />}
     </Container>
   );

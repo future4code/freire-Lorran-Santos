@@ -28,8 +28,7 @@ const Header = () => {
         </Button>
         {localStorage.getItem('token') ? (
           <Button onClick={onClickLogout} variant="outlined">
-            {' '}
-            Logout{' '}
+            Logout
           </Button>
         ) : (
           <Button
@@ -42,15 +41,6 @@ const Header = () => {
             Login
           </Button>
         )}
-        {/* <Button
-          onClick={() => {
-            goToLogin(navigate);
-          }}
-          variant="outlined"
-          color="primary"
-        >
-          Login
-        </Button> */}
       </StyledToolBar>
     </AppBar>
   );

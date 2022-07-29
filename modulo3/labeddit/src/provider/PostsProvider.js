@@ -6,6 +6,8 @@ const PostsProvider = (props) => {
   const [comment, setComment] = useState([]);
   const [votes, setVotes] = useState();
   const [loading, setLoading] = useState(false);
+  const [likePost, setLikePost] = useState(false);
+  const [page, setPage] = useState(1);
 
   return (
     <PostsContext.Provider
@@ -18,6 +20,10 @@ const PostsProvider = (props) => {
         setVotes,
         loading,
         setLoading,
+        likePost,
+        setLikePost,
+        page,
+        setPage,
       }}
     >
       {props.children}
