@@ -13,7 +13,7 @@ import PostPage from '../PostPage/PostPage';
 import useProtectedPage from '../../hooks/usePotectedPage';
 import Paginations from '../../components/Paginations/Paginations';
 import { KeyboardArrowUp, Refresh } from '@mui/icons-material';
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header/Header';
 
 const FeedPage = () => {
   useProtectedPage();

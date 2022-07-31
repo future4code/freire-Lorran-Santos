@@ -22,6 +22,7 @@ export const RefreshButton = styled.button`
   align-items: center;
   box-shadow: 0px 0px 4px #000000;
   background-image: linear-gradient(to right, #ff4081, #ffdb58);
+  cursor: pointer;
   @media (min-width: 700px) {
     left: 100px;
     top: 85px;
@@ -55,4 +56,5 @@ export const StyledBackToTop = styled.button`
   padding: 0px;
   box-shadow: 0px 0px 4px #000000;
   background-image: linear-gradient(to right, #ff4081, #ffdb58);
+  cursor: pointer;
 `;
