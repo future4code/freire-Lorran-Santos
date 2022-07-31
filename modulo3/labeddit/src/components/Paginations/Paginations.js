@@ -13,7 +13,7 @@ const Paginations = () => {
     <ContainerPagination>
       <StyledPagination
         color="primary"
-        count={10}
+        count={20}
         page={page}
         onChange={handleChange}
       />

@@ -13,7 +13,7 @@ import PostPage from '../PostPage/PostPage';
 import useProtectedPage from '../../hooks/usePotectedPage';
 import Paginations from '../../components/Paginations/Paginations';
 import { KeyboardArrowUp, Refresh } from '@mui/icons-material';
-import { goToLogin } from '../../router/coordinator';
+import Header from '../../components/Header/Header'
 
 const FeedPage = () => {
   useProtectedPage();
@@ -44,6 +44,7 @@ const FeedPage = () => {
 
   return (
     <Container>
+      <Header />
       {newPost ? <PostPage /> : null}
       <RefreshButton onClick={() => window.location.reload()}>
         <Refresh />

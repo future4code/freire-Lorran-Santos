@@ -6,6 +6,7 @@ export const ContainerSignup = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding-top: 2vh;
   padding-bottom: 2vh;
 `;
 

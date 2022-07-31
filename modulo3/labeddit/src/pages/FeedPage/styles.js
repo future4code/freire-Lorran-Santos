@@ -7,11 +7,11 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   gap: 16px;
-  padding-top: 2vh;
 `;
 
 export const RefreshButton = styled.button`
   position: absolute;
+  top: 75px;
   left: 20px;
   border: none;
   border-radius: 50%;
@@ -24,6 +24,7 @@ export const RefreshButton = styled.button`
   background-image: linear-gradient(to right, #ff4081, #ffdb58);
   @media (min-width: 700px) {
     left: 100px;
+    top: 85px;
   }
   @media (min-width: 1000px) {
     left: 220px;
