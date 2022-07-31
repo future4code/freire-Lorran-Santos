@@ -1,9 +1,9 @@
 export const goToFeed = (navigate) => {
-  navigate('/feed');
+  navigate('/');
 };
 
 export const goToLogin = (navigate) => {
-  navigate('/');
+  navigate('/login');
 };
 
 export const goToSignUp = (navigate) => {

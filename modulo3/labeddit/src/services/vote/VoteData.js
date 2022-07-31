@@ -1,11 +1,7 @@
 import axios from 'axios';
-import { useContext } from 'react';
 import { BASE_URL, token } from '../../constants/urls';
-import PostsContext from '../../context/PostsContext';
-import GetPosts from '../../services/GetPosts';
 
 export const VoteData = (id) => {
-  // const { setLikePost } = useContext(PostsContext);
   const body = {
     direction: 1,
   };

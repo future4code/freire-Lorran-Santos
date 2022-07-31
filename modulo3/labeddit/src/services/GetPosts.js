@@ -15,7 +15,7 @@ const GetPosts = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [page]);
+}, [`${BASE_URL}/posts?page=${page}`]);
 };
 
 export default GetPosts;

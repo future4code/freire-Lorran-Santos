@@ -1,16 +1,16 @@
 import React from 'react';
 import logo from '../../img/logo.jpg';
-import { ContainerLogin, LogoImage } from './styles';
+import { ContainerSignup, LogoImage } from './styles';
 import SignupForm from './SignupForm';
 import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
 const SignUpPage = () => {
   useUnprotectedPage();
   return (
-    <ContainerLogin>
+    <ContainerSignup>
       <LogoImage src={logo} />
       <SignupForm />
-    </ContainerLogin>
+    </ContainerSignup>
   );
 };
 

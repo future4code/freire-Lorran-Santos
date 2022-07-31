@@ -8,10 +8,11 @@ import SignUpPage from '../pages/SignUpPage/SignUpPage';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Header />
+      {window.location?.pathname !== '/' ? '' : <Header />}
+      {/* <Header /> */}
       <Routes>
-        <Route path="/feed" element={<FeedPage />} />
-        <Route index element={<LoginPage />} />
+        <Route index element={<FeedPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/post" element={<PostPage />} />
         <Route path="/signup" element={<SignUpPage />} />
       </Routes>
