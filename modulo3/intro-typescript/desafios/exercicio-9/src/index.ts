@@ -1,10 +1,17 @@
-const studant = (): boolean => {
-  const age: number = Number(process.argv[2]);
-  const highSchool: string = process.argv[3];
-  const freeTime: number = Number(process.argv[4]);
-  const schoolShift: string = process.argv[5];
-  
-
+const studant = (
+  age: number,
+  school: boolean,
+  freeTime: number,
+  shift: string
+): boolean => {
+  if (
+    (age >= 18 && school && freeTime >= 40 && shift === 'integral') ||
+    (age >= 18 && school && freeTime >= 20 && shift === 'noturno')
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
-console.log(studant());
+console.log(studant(22, true, 20, 'noturno'));
