@@ -48,7 +48,7 @@ const desconto = (arr: Roupa[]): Roupa[] => {
     }
   });
 
-  const arrayComDescontos = [...arr];
+  const arrayComDescontos: Roupa[] = [...arr];
   return arrayComDescontos;
 };
 
