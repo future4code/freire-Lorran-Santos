@@ -16,31 +16,34 @@ enum EpocaHisctrica {
   IDADECONTEMPORANEA = 'Idade Contemporânea',
 }
 
-const verificaEpoca = (verificaAno: number, verificaEpoca?: Epoca): string | undefined => {
+const verificaEpoca = (
+  verificaAno: number,
+  verificaEpoca?: Epoca
+): string | undefined => {
   const idadeHistorica: Ano = {
     ano: verificaAno,
     epoca: verificaEpoca,
   };
   if (idadeHistorica.epoca === Epoca.AC) {
     if (idadeHistorica.ano < 4000) {
-      return 'Pré-História';
+      return EpocaHisctrica.PREHISTORIA;
     } else {
-      return 'Idade Antiga';
+      return EpocaHisctrica.IDADEANTIGA;
     }
   } else if (
     idadeHistorica.epoca === Epoca.DC ||
     idadeHistorica.epoca === undefined
   ) {
     if (idadeHistorica.ano < 476) {
-      return 'Idade Antiga';
+      return EpocaHisctrica.IDADEANTIGA;
     } else if (idadeHistorica.ano >= 476) {
-      return 'Idade Média';
+      return EpocaHisctrica.IDADEMEDIA;
     } else if (idadeHistorica.ano >= 1453 && idadeHistorica.ano < 1789) {
-      return 'Idade Moderna';
+      return EpocaHisctrica.IDADEMODERNA;
     } else if (idadeHistorica.ano >= 1789) {
-      return 'Idade Contemporânea';
+      return EpocaHisctrica.IDADECONTEMPORANEA;
     }
   }
 };
 
-console.log(verificaEpoca(475));
+console.log(verificaEpoca(3000, Epoca.AC));
