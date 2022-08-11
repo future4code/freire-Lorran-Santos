@@ -16,7 +16,7 @@ enum EpocaHisctrica {
   IDADECONTEMPORANEA = 'Idade Contemporânea',
 }
 
-const verificaEpoca = (verificaAno: number, verificaEpoca?: Epoca) => {
+const verificaEpoca = (verificaAno: number, verificaEpoca?: Epoca): string | undefined => {
   const idadeHistorica: Ano = {
     ano: verificaAno,
     epoca: verificaEpoca,
