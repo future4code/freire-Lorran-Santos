@@ -1,16 +1,16 @@
 type Post = {
-  postId: number;
-  title: string;
-  body: string;
+  postId: number
+  title: string
+  body: string
 };
 
 type User = {
-  userId: number;
-  name: string;
-  phone: string;
-  email: string;
-  website: string;
-  post: Post[];
+  userId: number
+  name: string
+  phone: string
+  email: string
+  website: string
+  post: Post[]
 };
 
 export const users: User[] = [
