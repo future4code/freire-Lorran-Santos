@@ -35,8 +35,28 @@ export let clients: Account[] = [
         spen: [
           {
             date: "13/01/2022",
-            description: "Placa de Video RTX 2060",
+            description: "Placa de Video RX 6600",
             value: 1999,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    user: {
+      id: 1660850648854,
+      name: "teste2",
+      cpf: "123.456.789-11",
+      birth: "22/11/2000",
+    },
+    extract: [
+      {
+        balance: 3000,
+        spen: [
+          {
+            date: "13/01/2022",
+            description: "Placa de Video RTX 2060",
+            value: 1000,
           },
         ],
       },
