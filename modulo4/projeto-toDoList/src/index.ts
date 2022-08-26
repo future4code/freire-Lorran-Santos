@@ -129,4 +129,14 @@ app.get("/task/:id", async (req, res) => {
   }
 });
 
+// PEGAR TODOS OS USUARIOS
+app.get("/users/all", async, (req, res) => {
+  try {
+    const result = await connection("TodoListUser");
+    res.status(200).send(result);
+  } catch (error: any) {
+    res.status(errorCode).send(error.sqlMessage || { message: error.message });
+  }
+});
+
 export default app;
