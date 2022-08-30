@@ -42,11 +42,19 @@ export async function getAllUsers(req: Request, res: Response): Promise<void> {
 
 export const getTypes = async (req: Request, res: Response): Promise<void> => {
   try {
-    const type = req.query.type;
-    const result: User[] = await connection("aula48_exercicio").where(
-      "type",
-      "like",
-      `%${type}%`
+    let sort: string = req.query.sort as string;
+    if (sort !== "name" && sort !== "type") {
+      sort = "email";
+    }
+
+    let order: string = req.query.order as string;
+    if (order !== "asc" && order !== "desc") {
+      order = "asc";
+    }
+
+    const result: User[] = await connection("aula48_exercicio").orderBy(
+      sort,
+      order
     );
 
     const userByTypes: User[] = result.map(mapDefault);
