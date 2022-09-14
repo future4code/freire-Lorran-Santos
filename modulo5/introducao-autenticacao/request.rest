@@ -1,0 +1,21 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+  "email": "fernanda@gmail.com",
+  "password": "123456789"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+  "email": "gohan@gmail.com",
+  "password": "senha123456"
+}
+
+###
+GET http://localhost:3003/user/profile
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjQ1ZjY2ODMxLTFiYTMtNDBlYi05MzQ1LWMzNmQwOTQ5YmM2MiIsImVtYWlsIjoiZ29oYW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiJzZW5oYTEyMzQ1NiJ9LCJpYXQiOjE2NjMwMTMwMjEsImV4cCI6MTY2MzA5OTQyMX0.B11_UVWYl_WvNmnhPKZJjS0ksY7iQ9llbjMmnbAq4QY
