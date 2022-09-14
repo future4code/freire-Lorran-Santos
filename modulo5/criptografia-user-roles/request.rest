@@ -1,0 +1,22 @@
+### 
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+  "email": "gohan@gmail.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+  "email": "lorran@gmail.com",
+  "password": "123456"
+}
+
+###
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM2MmUxY2VhLTFjNDAtNGZkMC1iNTRlLTRiMWY1N2JkY2E5MCIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NjMxMDM1MzksImV4cCI6MTY2MzE4OTkzOX0.KruOAMp9OTdYVcXJqOlZpBLJ8maidou4GGLgIepx-7Y
