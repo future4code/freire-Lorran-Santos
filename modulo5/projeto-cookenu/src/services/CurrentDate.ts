@@ -1,13 +1,12 @@
 class CurrentDate {
-  public getDate = () => {
-    const date = new Date();
-    const today = date.getDate();
-    const currentMonth = date.getMonth() + 1;
-    const currentYear = date.getFullYear();
+  public getDate = (date: string) => {
+    let newDate: Date = new Date(date);
+    let month = newDate.getMonth() + 1;
 
-    return `${today}/${
-      currentMonth < 10 ? `0${currentMonth}` : currentMonth
-    }/${currentYear}`;
+    const newFormattedDate: string = `${newDate.getDate()}/${
+      month < 10 ? `0${month}` : month
+    }/${newDate.getFullYear()}`;
+    return newFormattedDate;
   };
 
   public sendDate = () => {

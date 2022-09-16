@@ -24,6 +24,7 @@ const userController = new UserController();
 app.post('/user/signup', userController.signup);
 app.post('/user/login', userController.login);
 app.get('/user/profile', userController.profile);
+app.get('/user/feed', userController.feed);
 app.get('/user/:id', userController.selectProfile);
 
 const recipeControll = new RecipeControll();
@@ -31,8 +32,13 @@ const recipeControll = new RecipeControll();
 app.post('/recipe', recipeControll.createRecipes);
 app.get('/recipe/:id', recipeControll.getRecipes);
 
-const test = new CurrentDate();
-const teste = test.getDate();
-const teste2 = test.sendDate();
-console.log(teste);
-console.log(teste2);
+// DESAFIOS
+
+app.post('/user/follow/', userController.follow);
+app.post('/user/unfollow', userController.unfollow);
+
+// const test = new CurrentDate();
+// const teste = test.getDate();
+// const teste2 = test.sendDate();
+// console.log(teste);
+// console.log(teste2);
