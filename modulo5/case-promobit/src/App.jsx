@@ -3,11 +3,14 @@ import axios from 'axios';
 import { baseUrl } from './constants/baseUrl';
 import { key } from './constants/key';
 import Router from './routers/Router';
+import GlobalState from './global/GlobalState';
 
 const App = () => {
   return (
     <div>
-      <Router />
+      <GlobalState>
+        <Router />
+      </GlobalState>
     </div>
   );
 };
