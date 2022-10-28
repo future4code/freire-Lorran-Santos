@@ -1,55 +1,38 @@
 import styled from 'styled-components';
 
-export const ContainerTitle = styled.div`
+export const Container = styled.div`
   width: 100%;
-  padding: 4px 4px;
+  padding: 4px 10vw;
   background: #5c16c5;
   display: flex;
-  justify-content: center;
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 `;
 
-export const SiteTitle = styled.div`
+export const ContainerTitle = styled.div`
+  width: 13vw;
+  max-width: 200px;
+`;
+
+export const SiteTitle = styled.button`
   color: #ffffff;
   display: flex;
   align-items: center;
-  width: 80%;
-  max-width: 1200px;
-  gap: 16px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #00000000;
+  border: none;
+  gap: 32px;
   span {
     background-color: #ffffff;
     width: 6vw;
     height: 2vh;
     border-radius: 50px;
+    min-width: 70px;
+    max-width: 100px;
   }
-`;
-
-export const ContainerContent = styled.div`
-  background-color: #2d0c5e;
-  color: #ffffff;
-  text-align: center;
-  width: 100%;
-  padding: 5vh 5vw;
-  text-transform: uppercase;
-  h2 {
-    margin-bottom: 16px;
+  @media (max-width: 600px) {
+    justify-content: center;
   }
-`;
-
-export const Categories = styled.div`
-  padding-top: 16px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-export const ButtonCategory = styled.button`
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #323232;
-  padding: 8px 16px;
-  background-color: #ffffff;
-  cursor: pointer;
 `;
